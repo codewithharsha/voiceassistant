@@ -106,17 +106,17 @@ if __name__ == '__main__':
                 else:
                     raise WordNotFound
             except:
-                print("Can't understand,Try entering the word")
-                speak("Can't understand,Try entering the word")
-                data = input().lower()
-                if data in dictionary:
-                    meaning = dictionary[data]
-                    print(meaning)
-                    speak(meaning)
-                else:
-                    print("word doesn't exist")
+                # print("Can't understand,Try entering the word")
+                # speak("Can't understand,Try entering the word")
+                # if data in dictionary:
+                #     meaning = dictionary[data]
+                #     print(meaning)
+                #     speak(meaning)
+                # else:
+                print("word doesn't exist")
         elif ("weather" in data) or ("climate" in data) or ("temperature" in data):
-            city = take_city().lower()
+            print("Give the city name Boss!")
+            city = take_command()
             url = base_url_weather + weather_api + "&q=" + city
             try:
                 res = requests.get(url).json()
